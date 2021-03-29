@@ -10,25 +10,37 @@
  * 
  */
 
-// Scelta Pari/Dispari
-
-
+// Scelta Pari/Dispari e numero
 
 
 var pariDispari = prompt('Quale numero vuoi inserire?\nPari\nDispari').toLowerCase().trim();
 
+var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
 
-
-switch(pariDispari){
-    case 'pari': 
-    var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
-    console.log('Hai scelto: ', pariDispari)
-
-    if((userNumber >= 1 && userNumber <= 5) && (!isNaN(userNumber))){
-        console.log('correct');
-    } else console.log('errato');
+switch (pariDispari){
+    case 'pari':
+        while(( userNumber > 5 || userNumber < 1) || isNaN(userNumber)){
+            var userNumber = parseInt(prompt('Prego inserire un numero da 1 a 5'));
+        }
     break;
+
+    case 'dispari':
+        while(( userNumber > 5 || userNumber < 1) || isNaN(userNumber)){
+        var userNumber = parseInt(prompt('Prego inserire un numero da 1 a 5'));
+        }
+        
+
 }
+
+
+// Generazione numero random da 1 a 5 PC
+
+var numRandom = genRandomNumber(1, 5)
+console.log(numRandom)
+
+
+
+
 
 
 
@@ -82,6 +94,16 @@ function reverseChars(word){
     
     return reverseWord;
 
+}
 
 
+/**
+ * 
+ * @param {number} min // Valore minimo range
+ * @param {number} max // Valore masssimo range
+ * @returns // Numero random 
+ */
+function genRandomNumber(min, max){
+    var random = Math.floor( (Math.random()* max - min + 1)  + min);
+    return random;
 }
