@@ -73,20 +73,7 @@ if (result === pariDispari) {
     winner.innerHTML = 'Hai Perso'
     console.log('Hai perso')
     winner.style.color = 'red';
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**
@@ -108,6 +95,8 @@ if (result === pariDispari) {
 
 
 
+
+
 /************************
  * 
  * UTILITIES
@@ -116,6 +105,7 @@ if (result === pariDispari) {
 
 // Definizione Funzioni
 
+// Esercizio 1
 
 /**
  * 
@@ -141,6 +131,9 @@ function reverseChars(word){
 }
 
 
+
+// Esercizio 2
+
 /**
  * 
  * @param {number} min // Valore minimo range
@@ -156,7 +149,7 @@ function genRandomNumber(min, max){
 /**
  * 
  * @param {number} num //Numero da analizzare
- * @returns //Pari o Dispari
+ * @returns // Pari o Dispari
  */
 function oddEven(num){
     if (num % 2 === 0){
