@@ -10,6 +10,14 @@
  * 
  */
 
+// UTILITIES
+
+var sceltaUtente = document.getElementById('utente');
+var numeroUtente = document.getElementById('num-utente');
+var numeroBot = document.getElementById('num-bot');
+var tot = document.getElementById('totale');
+var winner = document.getElementById('winner');
+
 
 
 // Scelta Pari/Dispari e numero
@@ -24,6 +32,7 @@ while(pariDispari !== 'pari' && pariDispari !== 'dispari'){
     
 }
 
+sceltaUtente.innerHTML = 'La tua scelta è: ' + pariDispari;
 console.log('Hai scelto: ', pariDispari);
 
 var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
@@ -34,6 +43,7 @@ while(( userNumber > 5 || userNumber < 1) || isNaN(userNumber)){
 }
 
 
+numeroUtente.innerHTML = 'Il numero che hai scelto è: ' + userNumber;
 console.log('Numero da te inserito è: ', userNumber);
 
         
@@ -41,6 +51,7 @@ console.log('Numero da te inserito è: ', userNumber);
 // Generazione numero random da 1 a 5 PC
         
 var numRandom = genRandomNumber(1, 5)
+numeroBot.innerHTML = 'Io scelgo: ' + numRandom;
 console.log('Numero random PC è: ', numRandom)
 
 // Somma Numeri
@@ -50,12 +61,22 @@ console.log('la somma tra te e il pc è: ', somma);
 
 // Verifico se la somma è pari o dispari
 var result = oddEven(somma);
+tot.innerHTML = 'La somma è: ' + somma + ' quindi ' + result;
 console.log('Il risultato è: ' + somma + ' quindi: ' + result);
 
 // Stampo vincitore in base al risultato
 if (result === pariDispari) {
     console.log('Hai Vinto')
-} else console.log('Hai perso');
+    winner.innerHTML = 'Hai Vinto';
+    winner.style.color = 'yellow';
+} else{
+    winner.innerHTML = 'Hai Perso'
+    console.log('Hai perso')
+    winner.style.color = 'red';
+
+
+}
+
 
 
 

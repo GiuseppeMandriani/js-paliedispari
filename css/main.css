@@ -6,7 +6,28 @@
 }
 
 body{
-    color: #000;
+    color: #fff;
+    text-align: center;
     font-family: sans-serif;
+    background-image: url(https://cdn.pixabay.com/photo/2016/10/15/21/50/play-stone-1743645_1280.jpg);
+    background-size: cover;
+}
+
+.container{
+    font-family: 'Bangers', cursive;
+    margin: 20px auto;
+    padding: 10px;
+    width:500px;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius:10px;
+}
+
+h2{
+    margin: 15px 0;
+}
+
+
+#winner{
+    font-size:50px;
 }
 
