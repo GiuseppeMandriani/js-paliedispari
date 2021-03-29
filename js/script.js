@@ -10,33 +10,56 @@
  * 
  */
 
+
+
 // Scelta Pari/Dispari e numero
 
+var pariDispari = prompt('Facciamo un gioco, scegli se:\nPari\nDispari').toLowerCase().trim();
+console.log('Scelta utente: ', pariDispari);
 
-var pariDispari = prompt('Quale numero vuoi inserire?\nPari\nDispari').toLowerCase().trim();
+
+while(pariDispari !== 'pari' && pariDispari !== 'dispari'){
+    var pariDispari = prompt('Scegli tra:\nPari\nDispari').toLowerCase().trim();
+    console.log('Scelta errata')
+    
+}
+
+console.log('Hai scelto: ', pariDispari);
 
 var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
 
-switch (pariDispari){
-    case 'pari':
-        while(( userNumber > 5 || userNumber < 1) || isNaN(userNumber)){
+while(( userNumber > 5 || userNumber < 1) || isNaN(userNumber)){
             var userNumber = parseInt(prompt('Prego inserire un numero da 1 a 5'));
-        }
-    break;
-
-    case 'dispari':
-        while(( userNumber > 5 || userNumber < 1) || isNaN(userNumber)){
-        var userNumber = parseInt(prompt('Prego inserire un numero da 1 a 5'));
-        }
-        
-
+            console.log('Valore inserito errato')
 }
 
 
-// Generazione numero random da 1 a 5 PC
+console.log('Numero da te inserito è: ', userNumber);
 
+        
+        
+// Generazione numero random da 1 a 5 PC
+        
 var numRandom = genRandomNumber(1, 5)
-console.log(numRandom)
+console.log('Numero random PC è: ', numRandom)
+
+// Somma Numeri
+
+somma = userNumber + numRandom;
+console.log('la somma tra te e il pc è: ', somma);
+
+// Verifico se la somma è pari o dispari
+var result = oddEven(somma);
+console.log('Il risultato è: ' + somma + ' quindi: ' + result);
+
+// Stampo vincitore in base al risultato
+if (result === pariDispari) {
+    console.log('Hai Vinto')
+} else console.log('Hai perso');
+
+
+
+
 
 
 
@@ -106,4 +129,17 @@ function reverseChars(word){
 function genRandomNumber(min, max){
     var random = Math.floor( (Math.random()* max - min + 1)  + min);
     return random;
+}
+
+
+/**
+ * 
+ * @param {number} num //Numero da analizzare
+ * @returns //Pari o Dispari
+ */
+function oddEven(num){
+    if (num % 2 === 0){
+        return 'pari'
+    }
+    return 'dispari'
 }
