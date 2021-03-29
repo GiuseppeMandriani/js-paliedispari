@@ -95,6 +95,10 @@ if (result === pariDispari) {
 var userWord = prompt('Inserire la parola da verificare').toLowerCase().trim();
 console.log('Parola da verificare: ', userWord);
 
+while (!isNaN(userWord)){
+    var userWord = prompt('Prego inserire una parola e non un numero').toLowerCase().trim();
+}
+
 sceltaUtente.innerHTML = 'Hai scelto: ' + userWord;
 
 
