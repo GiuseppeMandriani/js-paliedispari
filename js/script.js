@@ -12,11 +12,15 @@
 
 // UTILITIES
 
+
+
 var sceltaUtente = document.getElementById('utente');
 var numeroUtente = document.getElementById('num-utente');
 var numeroBot = document.getElementById('num-bot');
 var tot = document.getElementById('totale');
 var winner = document.getElementById('winner');
+
+/*
 
 
 
@@ -75,6 +79,8 @@ if (result === pariDispari) {
     winner.style.color = 'red';
 }
 
+*/
+
 
 /**
  * 
@@ -86,12 +92,30 @@ if (result === pariDispari) {
 
 // Fase 1 Richiesta dato all'utente
 
-// var userWord = prompt('Inserire la parola da verificare').toLowerCase().trim();
-// console.log('Parola da verificare: ', userWord);
+var userWord = prompt('Inserire la parola da verificare').toLowerCase().trim();
+console.log('Parola da verificare: ', userWord);
+
+sceltaUtente.innerHTML = 'Hai scelto: ' + userWord;
+
+
 
 // Fase 2 Verifica se parola è Polindroma
 
-// var wordPalindrome = reverseChars(userWord);
+var wordPalindrome = reverseChars(userWord);
+
+if (wordPalindrome === userWord){
+    // console.log('La Parola è Polindroma: ', wordPalindrome);
+    tot.innerHTML = 'La Parola è Polindroma: ' + wordPalindrome;
+} else {
+    tot.innerHTML = 'Spiacente, non è polindroma: ' + wordPalindrome;
+    // console.log('Mi spiace, non è Polindroma: ', wordPalindrome);
+}
+
+
+
+
+
+
 
 
 
